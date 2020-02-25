@@ -1,2 +1,4 @@
-<h1>Notes#show</h1>
-<p>Find me in app/views/notes/show.html.erb</p>
+<h1><%= @note.name %></h1>
+<%= @note.body %>
+<br>
+<%= link_to 'Back', plan_notes_path(@plan) %>

@@ -1,2 +1,10 @@
-<h1>Notes#edit</h1>
-<p>Find me in app/views/notes/edit.html.erb</p>
+<h1>Edit Note</h1>
+<%= form_for [@plan, @note] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+<% end %>
