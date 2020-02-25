@@ -1,0 +1,7 @@
+<h1>Plans#edit</h1>
+<%= form_for @plan do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date, required: true %>
+
+    <%= f.submit %>
+<% end %>
