@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_212836) do
 
   create_table "notes", force: :cascade do |t|
     t.string "name"
+    t.time "time"
     t.text "body"
     t.bigint "plan_id", null: false
     t.datetime "created_at", precision: 6, null: false

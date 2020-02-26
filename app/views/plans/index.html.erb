@@ -1,13 +1,14 @@
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
 <h2>Welcome <%= current_user.first_name %>, what are your plans?</h2>
+<h2><%= @plans.length <= 0 ? "No Day Plans Made so far..." : "" %></h2>
 
 <% @plans.each do |plan| %>
-    <h2><%= link_to "Plans For: #{plan.date}", plan_notes_path(plan)%><h2>
-    <%= link_to 'Edit', edit_plan_path(plan)%>
-    <%= link_to 'Delete', plan, method: :delete%>
+    <h2><%= link_to "Day Plans For: #{plan.fix_date}", plan_notes_path(plan)%><h2>
+    <%= link_to 'Edit Date', edit_plan_path(plan)%>
+    <%= link_to 'Delete Day Plan', plan, method: :delete%>
 <% end %>
 
 <br>
 
 <h2>Create New Plan</h2>
-<%= link_to 'New Plan', new_plan_path%>
+<%= link_to 'New Day Plan', new_plan_path%>

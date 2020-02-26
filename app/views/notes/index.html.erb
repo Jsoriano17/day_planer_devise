@@ -1,18 +1,19 @@
 
-<h1><%= current_user.first_name %>'s Notes for <%= @plan.date %></h1>
+<h1><%= current_user.first_name %>'s Plans for <%= @plan.fix_date %></h1>
+<h2><%= @notes.length <= 0 ? "No plans so far..." : "" %></h2>
 
 <% @notes.each do |note| %>
-    <h2><%= note.name %></h2>
-    <%= link_to 'Show Note', plan_note_path(@plan, note)%>
-    <%= link_to 'Edit Note', edit_plan_note_path(@plan, note)%>
-    <%= link_to 'Delete Note', [@plan, note], method: :delete%>
+    <h2><%= note.name %> at <%= note.fix_time %></h2>
+    <%= link_to 'Show Plan', plan_note_path(@plan, note)%>
+    <%= link_to 'Edit Plan', edit_plan_note_path(@plan, note)%>
+    <%= link_to 'Delete Plan', [@plan, note], method: :delete%>
 <% end %>
 
 <br>
 
-<h2>Create New Note</h2>
-<%= link_to 'New Note', new_plan_note_path%>
+<h2>Create New Plan</h2>
+<%= link_to 'New Plan', new_plan_note_path%>
 
 <br>
 
-<%= link_to 'Back To Plans',  plans_path%>
+<%= link_to 'Back To Day Plans',  plans_path%>
