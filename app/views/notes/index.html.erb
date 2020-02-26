@@ -3,10 +3,16 @@
 <h2><%= @notes.length <= 0 ? "No plans so far..." : "" %></h2>
 
 <% @notes.each do |note| %>
-    <h2><%= note.name %> at <%= note.fix_time %></h2>
-    <%= link_to 'Show Plan', plan_note_path(@plan, note)%>
-    <%= link_to 'Edit Plan', edit_plan_note_path(@plan, note)%>
-    <%= link_to 'Delete Plan', [@plan, note], method: :delete%>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= note.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">At: <%= note.fix_time %></h6>
+    <p class="card-text"><%= note.body %></p>
+    <a href="#" class="card-link"><%= link_to 'Show Plan', plan_note_path(@plan, note)%></a>
+    <a href="#" class="card-link"><%= link_to '- Edit Plan -', edit_plan_note_path(@plan, note)%></a>
+     <a href="#" class="card-link"> <%= link_to 'Delete Plan', [@plan, note], method: :delete%></a>
+  </div>
+</div>
 <% end %>
 
 <br>

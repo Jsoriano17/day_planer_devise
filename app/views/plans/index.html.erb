@@ -2,9 +2,14 @@
 <h2><%= @plans.length <= 0 ? "No Day Plans Made so far..." : "" %></h2>
 
 <% @plans.each do |plan| %>
-    <h2><%= link_to "Day Plans For: #{plan.fix_date}", plan_notes_path(plan)%><h2>
-    <%= link_to 'Edit Date', edit_plan_path(plan)%>
-    <%= link_to 'Delete Day Plan', plan, method: :delete%>
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Day Plans For:</h5>
+    <p class="card-text"><h2><%= link_to "Day Plans For: #{plan.fix_date}", plan_notes_path(plan)%><h2></p>
+    <div href="#" class="btn btn-outline-dark"><%= link_to 'Edit Date', edit_plan_path(plan)%></div>
+    <div href="#" class="btn btn-outline-dark"><%= link_to 'Delete Day Plan', plan, method: :delete%></div>
+  </div>
+</div>
 <% end %>
 
 <br>
