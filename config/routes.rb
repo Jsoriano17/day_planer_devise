@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-root 'plans#index'
+get 'static_page/index'
+root 'static_page#index'
 resources :plans do
   resources :notes
 end
